@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text>HomeScreen</Text>
+      <Button title="Go to Details" />
     </View>
   );
 }
