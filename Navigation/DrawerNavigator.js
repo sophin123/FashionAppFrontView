@@ -13,12 +13,25 @@ import SearchScreen from "../Screens/SearchScreen";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+const firstIconSize = 25;
+const secondIconSize = 30;
+
 const Tab = createBottomTabNavigator();
 
 export default function DrawerNavigator() {
   return (
     <NavigationContainer>
-      <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
+      <Tab.Navigator
+        defaultScreenOptions={HomeScreen}
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            backgroundColor: "#83968b",
+            height: 80,
+          },
+        }}
+      >
         <Tab.Screen
           name="Home"
           component={HomeScreen}
@@ -30,7 +43,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/1946/1946436.png",
                     }}
-                    style={{ width: 20, height: 20 }}
+                    style={{ width: firstIconSize, height: firstIconSize }}
                   />
                 );
               } else {
@@ -39,7 +52,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png",
                     }}
-                    style={{ width: 20, height: 20 }}
+                    style={{ width: firstIconSize, height: firstIconSize }}
                   />
                 );
               }
@@ -57,7 +70,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/168/168214.png",
                     }}
-                    style={{ width: 20, height: 20 }}
+                    style={{ width: firstIconSize, height: firstIconSize }}
                   />
                 );
               } else {
@@ -66,7 +79,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/747/747327.png",
                     }}
-                    style={{ width: 20, height: 20 }}
+                    style={{ width: firstIconSize, height: firstIconSize }}
                   />
                 );
               }
@@ -84,7 +97,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/1170/1170627.png",
                     }}
-                    style={{ width: 25, height: 25 }}
+                    style={{ width: secondIconSize, height: secondIconSize }}
                   />
                 );
               } else {
@@ -93,7 +106,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/3144/3144456.png",
                     }}
-                    style={{ width: 25, height: 25 }}
+                    style={{ width: secondIconSize, height: secondIconSize }}
                   />
                 );
               }
@@ -109,9 +122,9 @@ export default function DrawerNavigator() {
                 return (
                   <Image
                     source={{
-                      uri: "https://cdn-icons.flaticon.com/png/512/3249/premium/3249592.png?token=exp=1646790400~hmac=bcd07deda43606ff7d5ac60161357208",
+                      uri: "https://cdn-icons.flaticon.com/png/512/3249/premium/3249592.png?token=exp=1646790400~hmac=bcd07deda43606ff7d5ac60161357secondIconSize8",
                     }}
-                    style={{ width: 25, height: 25 }}
+                    style={{ width: secondIconSize, height: secondIconSize }}
                   />
                 );
               } else {
@@ -120,7 +133,7 @@ export default function DrawerNavigator() {
                     source={{
                       uri: "https://cdn-icons-png.flaticon.com/512/482/482631.png",
                     }}
-                    style={{ width: 25, height: 25 }}
+                    style={{ width: secondIconSize, height: secondIconSize }}
                   />
                 );
               }
