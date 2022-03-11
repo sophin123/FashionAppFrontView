@@ -35,15 +35,12 @@ export default function HomeScreen() {
         style={{
           paddingHorizontal: 30,
           alignItems: "center",
-
-          borderColor: "red",
-          borderWidth: 2,
         }}
       >
         <Text
           style={{
             color: "#d4d4d4",
-            fontSize: 30,
+            fontSize: 25,
             fontFamily: "PoppinsThin",
           }}
         >
@@ -52,9 +49,9 @@ export default function HomeScreen() {
         <Text
           style={{
             color: "white",
-            fontSize: 40,
-            fontWeight: "bold",
-            fontFamily: "PoppinsSemiBold",
+            fontSize: 30,
+
+            fontFamily: "PoppinsExtraBold",
           }}
         >
           with
