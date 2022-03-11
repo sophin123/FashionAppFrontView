@@ -5,6 +5,7 @@ import Ionicon from "react-native-vector-icons/Ionicons";
 
 import useFonts from "../hooks/useFonts";
 import AppLoading from "expo-app-loading";
+import ImageSlider from "../components/ImageSlider";
 
 export default function HomeScreen() {
   const [isReady, setIsReady] = React.useState(false);
@@ -34,7 +35,9 @@ export default function HomeScreen() {
         style={{
           paddingHorizontal: 30,
           alignItems: "center",
-          justifyContent: "center",
+
+          borderColor: "red",
+          borderWidth: 2,
         }}
       >
         <Text
@@ -56,9 +59,10 @@ export default function HomeScreen() {
         >
           with
           <Text style={{ color: "#a8f069" }}> 15% </Text>
-          <Text style={styles.text}>discount</Text>
+          <Text>discount</Text>
         </Text>
       </View>
+      <ImageSlider />
     </View>
   );
 }

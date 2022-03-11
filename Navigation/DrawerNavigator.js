@@ -121,9 +121,7 @@ export default function DrawerNavigator() {
               if (focused) {
                 return (
                   <Image
-                    source={{
-                      uri: "https://cdn-icons.flaticon.com/png/512/3249/premium/3249592.png?token=exp=1646790400~hmac=bcd07deda43606ff7d5ac60161357secondIconSize8",
-                    }}
+                    source={require("../assets/search-filled.png")}
                     style={{ width: secondIconSize, height: secondIconSize }}
                   />
                 );
