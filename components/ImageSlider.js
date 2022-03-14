@@ -9,6 +9,7 @@ import {
   ScrollView,
   ImageBackground,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
@@ -26,7 +27,6 @@ export default function ImageSlider() {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   console.log(scrollX);
-  const colorIndex = ["red", "green", "blue"];
 
   const { width: windowWidth } = useWindowDimensions();
 
@@ -93,7 +93,6 @@ export default function ImageSlider() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
   },
   scrollContainer: {
