@@ -11,12 +11,16 @@ import {
   FlatList,
 } from "react-native";
 
+import EStyleSheet from "react-native-extended-stylesheet";
+
 import Ionicon from "react-native-vector-icons/Ionicons";
 
 import useFonts from "../hooks/useFonts";
 import AppLoading from "expo-app-loading";
 import ImageSlider from "../components/ImageSlider";
 import GridView from "../components/GridView";
+
+EStyleSheet.build();
 
 export default function HomeScreen() {
   const [isReady, setIsReady] = React.useState(false);
@@ -52,11 +56,12 @@ export default function HomeScreen() {
               }}
             >
               <Text
-                style={{
-                  color: "#d4d4d4",
-                  fontSize: 25,
-                  fontFamily: "PoppinsThin",
-                }}
+                style={[
+                  {
+                    fontFamily: "PoppinsThin",
+                  },
+                  eStyles.text,
+                ]}
               >
                 New collection
               </Text>
@@ -115,6 +120,12 @@ export default function HomeScreen() {
   );
 }
 
+const eStyles = EStyleSheet.create({
+  text: {
+    color: "#d4d4d4",
+    fontSize: "1.5rem",
+  },
+});
 const styles = StyleSheet.create({
   container: {
     flex: 1,
