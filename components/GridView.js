@@ -12,7 +12,7 @@ import {
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import EStyleSheet from "react-native-extended-stylesheet";
 
-const imageData = [
+const Data = [
   {
     id: 1,
     imageUrl:
@@ -46,14 +46,22 @@ const imageData = [
 ];
 
 export default function GridView() {
-  const [active, setActive] = React.useState(true);
-  const [selected, setSelected] = React.useState(null);
+  const [imageData, setImageData] = React.useState(Data);
 
   const onSelect = (id) => {
-    setSelected(id);
+    for (let data of imageData) {
+      if (data.id == id) {
+        data.selected = data.selected == null ? true : !data.selected;
+        break;
+      }
+    }
+    setImageData(imageData);
   };
 
   function ListImage({ id, item, selected, onSelect }) {
+    const [status, setStatus] = React.useState(true);
+
+    console.log("Item", item);
     return (
       <View style={{ width: "50%" }}>
         <Image
@@ -68,10 +76,13 @@ export default function GridView() {
             top: 15,
             right: 20,
           }}
-          onPress={() => onSelect(id)}
+          onPress={() => {
+            onSelect(id);
+            setStatus(!status);
+          }}
         >
           <MaterialIcons size={25} color="green">
-            {selected ? "favorite" : "favorite_border"}
+            {item.selected == true ? "favorite" : "favorite_border"}
           </MaterialIcons>
         </TouchableOpacity>
       </View>
@@ -82,13 +93,8 @@ export default function GridView() {
     <View style={styles.container}>
       <FlatList
         data={imageData}
-        renderItem={({ item, index }) => (
-          <ListImage
-            item={item}
-            id={item.id}
-            selected={item.id === selected}
-            onSelect={onSelect}
-          />
+        renderItem={({ item }) => (
+          <ListImage item={item} id={item.id} onSelect={onSelect} />
         )}
         numColumns={2}
         keyExtractor={(item) => item.id.toString()}
