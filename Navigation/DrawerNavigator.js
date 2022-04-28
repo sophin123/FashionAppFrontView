@@ -22,7 +22,7 @@ export default function DrawerNavigator() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        defaultScreenOptions={HomeScreen}
+        initialRouteName="Menu"
         screenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
