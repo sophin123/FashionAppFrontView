@@ -60,8 +60,6 @@ export default function GridView() {
 
   function ListImage({ id, item, selected, onSelect }) {
     const [status, setStatus] = React.useState(true);
-
-    console.log("Item", item);
     return (
       <View style={{ width: "50%" }}>
         <Image
@@ -69,6 +67,7 @@ export default function GridView() {
           style={eStyles.imageContainer}
           resizeMode="cover"
         />
+
         <TouchableOpacity
           style={{
             flex: 1,

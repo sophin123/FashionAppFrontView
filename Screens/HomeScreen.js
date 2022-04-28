@@ -19,6 +19,7 @@ import useFonts from "../hooks/useFonts";
 import AppLoading from "expo-app-loading";
 import ImageSlider from "../components/ImageSlider";
 import GridView from "../components/GridView";
+import { StatusBar } from "expo-status-bar";
 
 EStyleSheet.build();
 
@@ -42,6 +43,7 @@ export default function HomeScreen() {
   }
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar hidden />
       <FlatList
         ListHeaderComponent={() => (
           <View>
