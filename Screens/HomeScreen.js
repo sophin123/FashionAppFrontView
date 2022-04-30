@@ -60,7 +60,7 @@ export default function HomeScreen() {
               <Text
                 style={[
                   {
-                    fontFamily: "PoppinsThin",
+                    fontFamily: "PoppinsSemiBold",
                   },
                   eStyles.text,
                 ]}
