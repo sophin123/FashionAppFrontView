@@ -26,7 +26,7 @@ export default function GridView() {
     setImageData(imageData);
   };
 
-  function ListImage({ id, item, selected, onSelect }) {
+  function ListImage({ id, item, onSelect }) {
     const [status, setStatus] = React.useState(true);
     return (
       <View style={{ width: "50%" }}>

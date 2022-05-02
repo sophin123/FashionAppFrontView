@@ -5,13 +5,19 @@ import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 import useFonts from "../hooks/useFonts";
 import AppLoading from "expo-app-loading";
 import EStyleSheet from "react-native-extended-stylesheet";
-import { Data1 } from "../api/data";
+import { Data1, Data2 } from "../api/data";
 import CButton from "../components/CButton";
 
 EStyleSheet.build();
 
 export default function MenuScreen() {
   const [isReady, setIsReady] = React.useState(false);
+
+  const [selectID, setSelectID] = React.useState(null);
+
+  const onSelect = (id) => {
+    setSelectID(id);
+  };
 
   const LoadFonts = async () => {
     await useFonts();
@@ -48,7 +54,15 @@ export default function MenuScreen() {
           style={{ margin: 10 }}
           data={Data1}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <CButton subTitle={item.name} />}
+          renderItem={({ item }) => (
+            <CButton
+              item={item}
+              subTitle={item.name}
+              selectID={item.id === selectID}
+              id={item.id}
+              onSelect={onSelect}
+            />
+          )}
           horizontal
           showsHorizontalScrollIndicator={false}
         />
