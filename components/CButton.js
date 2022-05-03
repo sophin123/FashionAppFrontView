@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Data2 } from "../api/data";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 export default function CButton({
   subTitle,
@@ -9,25 +10,48 @@ export default function CButton({
   onHeadSelect,
   selectID,
 }) {
-  // const [status, setStatus] = React.useState(false);
-
-  return (
-    <TouchableOpacity
-      style={selectID ? styles.buttonStyle1 : styles.buttonStyle2}
-      onPress={() => {
-        onHeadSelect(id);
-      }}
-    >
-      <Text
-        style={[
-          selectID ? styles.textStyle1 : styles.textStyle2,
-          { fontFamily: "PoppinsSemiBold" },
-        ]}
+  if (id === "1" && selectID) {
+    return (
+      <TouchableOpacity
+        style={selectID ? styles.buttonStyle1 : styles.buttonStyle2}
+        onPress={() => {
+          onHeadSelect(id);
+        }}
       >
-        {subTitle}
-      </Text>
-    </TouchableOpacity>
-  );
+        <View style={{ flexDirection: "row" }}>
+          <MaterialIcons size={20} color="green" style={{ padding: 5 }}>
+            sort
+          </MaterialIcons>
+          <Text
+            style={[
+              selectID ? styles.textStyle1 : styles.textStyle2,
+              { fontFamily: "PoppinsSemiBold" },
+            ]}
+          >
+            {subTitle}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  } else {
+    return (
+      <TouchableOpacity
+        style={selectID ? styles.buttonStyle1 : styles.buttonStyle2}
+        onPress={() => {
+          onHeadSelect(id);
+        }}
+      >
+        <Text
+          style={[
+            selectID ? styles.textStyle1 : styles.textStyle2,
+            { fontFamily: "PoppinsSemiBold" },
+          ]}
+        >
+          {subTitle}
+        </Text>
+      </TouchableOpacity>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

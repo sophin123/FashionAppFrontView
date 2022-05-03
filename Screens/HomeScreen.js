@@ -86,7 +86,7 @@ export default function HomeScreen() {
                 alignItems: "center",
                 position: "absolute",
                 left: "25%",
-                top: "45%",
+                top: "44%",
               }}
             >
               <TouchableOpacity style={styles.button}>

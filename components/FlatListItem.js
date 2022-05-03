@@ -6,7 +6,11 @@ export default function FlatListItem({ source, onSelect, id, item }) {
   const [status, setStatus] = React.useState(true);
 
   return (
-    <View style={styles.container}>
+    <View
+      style={
+        id % 2 === 0 ? [{ marginTop: 20 }, styles.container] : styles.container
+      }
+    >
       <Image source={{ uri: source }} style={styles.imageContainer} />
       <TouchableOpacity
         style={{
@@ -37,9 +41,6 @@ export default function FlatListItem({ source, onSelect, id, item }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
-    // borderColor: "red",
-    // borderWidth: 2,
   },
   titleText: {
     opacity: 0.5,
@@ -49,8 +50,6 @@ const styles = StyleSheet.create({
     color: "white",
   },
   priceText: {
-    // borderColor: "red",
-    // borderWidth: 2,
     flexWrap: "wrap",
     alignSelf: "flex-start",
     marginLeft: 10,
