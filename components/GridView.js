@@ -12,6 +12,7 @@ import {
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { Data2 } from "../api/data";
+import FlatListItem from "./FlatListItem";
 
 export default function GridView() {
   const [imageData, setImageData] = React.useState(Data2);
@@ -25,43 +26,17 @@ export default function GridView() {
     }
     setImageData(imageData);
   };
-
-  function ListImage({ id, item, onSelect }) {
-    const [status, setStatus] = React.useState(true);
-    return (
-      <View style={{ width: "50%" }}>
-        <Image
-          source={{ uri: item.imageUrl }}
-          style={eStyles.imageContainer}
-          resizeMode="cover"
-        />
-
-        <TouchableOpacity
-          style={{
-            flex: 1,
-            position: "absolute",
-            top: 15,
-            right: 20,
-          }}
-          onPress={() => {
-            onSelect(id);
-            setStatus(!status);
-          }}
-        >
-          <MaterialIcons size={25} color="green">
-            {item.selected == true ? "favorite" : "favorite_border"}
-          </MaterialIcons>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
   return (
     <View style={styles.container}>
       <FlatList
         data={imageData}
         renderItem={({ item }) => (
-          <ListImage item={item} id={item.id} onSelect={onSelect} />
+          <FlatListItem
+            source={item.imageUrl}
+            id={item.id}
+            onSelect={onSelect}
+            item={item}
+          />
         )}
         numColumns={2}
         keyExtractor={(item) => item.id.toString()}

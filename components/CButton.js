@@ -2,14 +2,20 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Data2 } from "../api/data";
 
-export default function CButton({ subTitle, item, id, onSelect, selectID }) {
+export default function CButton({
+  subTitle,
+  item,
+  id,
+  onHeadSelect,
+  selectID,
+}) {
   // const [status, setStatus] = React.useState(false);
 
   return (
     <TouchableOpacity
       style={selectID ? styles.buttonStyle1 : styles.buttonStyle2}
       onPress={() => {
-        onSelect(id);
+        onHeadSelect(id);
       }}
     >
       <Text

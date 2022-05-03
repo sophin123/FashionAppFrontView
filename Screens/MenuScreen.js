@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 
 import useFonts from "../hooks/useFonts";
@@ -7,17 +7,30 @@ import AppLoading from "expo-app-loading";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { Data1, Data2 } from "../api/data";
 import CButton from "../components/CButton";
+import FlatListItem from "../components/FlatListItem";
 
 EStyleSheet.build();
 
 export default function MenuScreen() {
   const [isReady, setIsReady] = React.useState(false);
 
-  const [selectID, setSelectID] = React.useState(null);
+  const [imageData, setImageData] = React.useState(Data2);
 
-  const onSelect = (id) => {
+  const onHeadSelect = (id) => {
     setSelectID(id);
   };
+
+  const onSelect = (id) => {
+    for (let data of imageData) {
+      if (data.id == id) {
+        data.selected = data.selected == null ? true : !data.selected;
+        break;
+      }
+    }
+    setImageData(imageData);
+  };
+
+  const [selectID, setSelectID] = React.useState(null);
 
   const LoadFonts = async () => {
     await useFonts();
@@ -60,13 +73,27 @@ export default function MenuScreen() {
               subTitle={item.name}
               selectID={item.id === selectID}
               id={item.id}
-              onSelect={onSelect}
+              onHeadSelect={onHeadSelect}
             />
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
         />
       </View>
+
+      <FlatList
+        data={imageData}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <FlatListItem
+            source={item.imageUrl}
+            id={item.id}
+            item={item}
+            onSelect={onSelect}
+          />
+        )}
+        numColumns={2}
+      />
     </View>
   );
 }
@@ -97,4 +124,7 @@ const styles = StyleSheet.create({
     // borderColor: "red",
   },
   secondContainer: {},
+  thirdContainer: {
+    flex: 1,
+  },
 });

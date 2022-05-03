@@ -86,7 +86,7 @@ export default function HomeScreen() {
                 alignItems: "center",
                 position: "absolute",
                 left: "25%",
-                top: "48%",
+                top: "45%",
               }}
             >
               <TouchableOpacity style={styles.button}>
@@ -109,7 +109,7 @@ export default function HomeScreen() {
                 fontSize: 30,
                 fontFamily: "PoppinsExtraBold",
                 textAlign: "left",
-                marginTop: 40,
+                marginTop: 60,
               }}
             >
               Top Sales
