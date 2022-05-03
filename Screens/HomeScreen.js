@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignContent: "center",
-    backgroundColor: `rgba(25, 26, 25, 0.7)`,
+    backgroundColor: "#0b0d0c",
   },
   topIcon: {
     marginTop: 40,

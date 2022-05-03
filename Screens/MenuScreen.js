@@ -108,7 +108,7 @@ const eStyles = EStyleSheet.create({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: `rgba(25, 26, 25, 0.7)`,
+    backgroundColor: "#0b0d0c",
   },
   topText: {
     color: "white",

@@ -9,6 +9,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import SearchScreen from "../Screens/SearchScreen";
 
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+
 // import Ionicons from "@ant-design/icons";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -27,7 +29,7 @@ export default function DrawerNavigator() {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarStyle: {
-            backgroundColor: "#83968b",
+            backgroundColor: "#1c1f1d",
             height: 80,
           },
         }}
@@ -39,20 +41,18 @@ export default function DrawerNavigator() {
             tabBarIcon: ({ focused }) => {
               if (focused) {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/1946/1946436.png",
-                    }}
-                    style={{ width: firstIconSize, height: firstIconSize }}
+                  <MaterialIcons
+                    name="home"
+                    size={38}
+                    color={`rgba(222,254,113,255)`}
                   />
                 );
               } else {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/1946/1946488.png",
-                    }}
-                    style={{ width: firstIconSize, height: firstIconSize }}
+                  <MaterialIcons
+                    name="home"
+                    size={33}
+                    color={`rgba(255,255,255,0.5)`}
                   />
                 );
               }
@@ -66,20 +66,18 @@ export default function DrawerNavigator() {
             tabBarIcon: ({ focused }) => {
               if (focused) {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/168/168214.png",
-                    }}
-                    style={{ width: firstIconSize, height: firstIconSize }}
+                  <MaterialIcons
+                    name="grid-view"
+                    size={38}
+                    color={`rgba(222,254,113,255)`}
                   />
                 );
               } else {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/747/747327.png",
-                    }}
-                    style={{ width: firstIconSize, height: firstIconSize }}
+                  <MaterialIcons
+                    name="grid-view"
+                    size={33}
+                    color={`rgba(255,255,255,0.5)`}
                   />
                 );
               }
@@ -93,20 +91,18 @@ export default function DrawerNavigator() {
             tabBarIcon: ({ focused }) => {
               if (focused) {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/1170/1170627.png",
-                    }}
-                    style={{ width: secondIconSize, height: secondIconSize }}
+                  <MaterialIcons
+                    name="shopping-cart"
+                    size={38}
+                    color={`rgba(222,254,113,255)`}
                   />
                 );
               } else {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/3144/3144456.png",
-                    }}
-                    style={{ width: secondIconSize, height: secondIconSize }}
+                  <MaterialIcons
+                    name="shopping-cart"
+                    size={33}
+                    color={`rgba(255,255,255,0.5)`}
                   />
                 );
               }
@@ -120,18 +116,18 @@ export default function DrawerNavigator() {
             tabBarIcon: ({ focused }) => {
               if (focused) {
                 return (
-                  <Image
-                    source={require("../assets/search-filled.png")}
-                    style={{ width: secondIconSize, height: secondIconSize }}
+                  <MaterialIcons
+                    name="search"
+                    size={38}
+                    color={`rgba(222,254,113,255)`}
                   />
                 );
               } else {
                 return (
-                  <Image
-                    source={{
-                      uri: "https://cdn-icons-png.flaticon.com/512/482/482631.png",
-                    }}
-                    style={{ width: secondIconSize, height: secondIconSize }}
+                  <MaterialIcons
+                    name="search"
+                    size={33}
+                    color={`rgba(255,255,255,0.5)`}
                   />
                 );
               }
