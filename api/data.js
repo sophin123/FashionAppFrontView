@@ -1,5 +1,5 @@
 export const Data1 = [
-  { id: "1", name: "Sort by", filter: true },
+  { id: "1", name: "Sort by" },
   { id: "2", name: "Shoes" },
   { id: "3", name: "Pants" },
   { id: "4", name: "FW2021" },

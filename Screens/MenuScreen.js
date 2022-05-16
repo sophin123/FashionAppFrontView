@@ -13,6 +13,7 @@ EStyleSheet.build();
 
 export default function MenuScreen() {
   const [isReady, setIsReady] = React.useState(false);
+  const [selectID, setSelectID] = React.useState(null);
 
   const [imageData, setImageData] = React.useState(Data2);
 
@@ -29,8 +30,6 @@ export default function MenuScreen() {
     }
     setImageData(imageData);
   };
-
-  const [selectID, setSelectID] = React.useState(null);
 
   const LoadFonts = async () => {
     await useFonts();
